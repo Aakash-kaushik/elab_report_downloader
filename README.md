@@ -22,3 +22,4 @@ pip3 install -r requirements.txt
 ```python
 python3 oops_report.py
 ```
+And then use `image_extractor.py` to get a single report from all the folders.
