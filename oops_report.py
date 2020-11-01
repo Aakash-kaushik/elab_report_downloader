@@ -17,7 +17,7 @@ url = r'https://care.srmist.edu.in/srmktroops'
 # chrome default dowload path. 
 download_path = '<chrome default download path>'
 
-num_que = int(input("enter the number of questions to download: ")) - 1 
+num_que = int(input("Enter the number of question reports to download: ")) - 1 
 
 # The options.add_argument is the defualt user profile that 
 # could be found in a path similar to:
