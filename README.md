@@ -1,5 +1,10 @@
 # Elab Report Downloader
 
+Install requirements with 
+```python
+pip3 install -r requirements.txt
+```
+
 ## Need to download 
 - [Chromedriver](https://chromedriver.chromium.org/downloads) accordng to chrome version. 
 
