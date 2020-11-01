@@ -9,5 +9,5 @@ for num, folder in enumerate(folders_list):
   
   if image_list:
     shutil.move(image_list[0], folders_path)
-    os.rename(os.path.join(folders_path,image_list[0].split("/")[-1]), os.path.join(folders_path, str(num) + ".jpg"))
+    os.rename(os.path.join(folders_path,image_list[0].split("/")[-1]), os.path.join(folders_path, str(num) + ".png"))
     shutil.rmtree(folder)
