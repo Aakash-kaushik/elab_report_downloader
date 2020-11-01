@@ -91,3 +91,5 @@ for num in range(num_que):
   next_but = driver.find_element_by_css_selector("body > app-root > div > app-student-solve > div.top > button:nth-child(3)")
   next_but.click()
   time.sleep(5)
+
+driver.quit()
