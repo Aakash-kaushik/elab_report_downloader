@@ -1,7 +1,7 @@
 # Elab Report Downloader
 
 ## Need to download 
-- [Chromedriver](https://chromedriver.chromium.org/downloads) accordng to chrom version. 
+- [Chromedriver](https://chromedriver.chromium.org/downloads) accordng to chrome version. 
 
 ## Things to set before use
 - email_value
