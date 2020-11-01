@@ -9,8 +9,8 @@ pip3 install -r requirements.txt
 - [Chromedriver](https://chromedriver.chromium.org/downloads) accordng to chrome version. 
 
 ## Things to set before use
-- email_value
-- pwd_value 
-- download_path
-- deafult profile on line 27 
-- chromedriver path in webdriver.Chrome in arg executable_path
+- email_value.
+- pwd_value.
+- download_path: default download path that chrome uses, not the one that you want.
+- deafult profile on line 27.
+- chromedriver path in webdriver.Chrome in arg executable_path.
