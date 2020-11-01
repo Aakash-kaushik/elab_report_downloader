@@ -1,6 +1,6 @@
 # Author : Aakash Kaushik <https://github.com/Aakash-kaushik>
-import time
-from os import path
+import time, os, shutil
+from glob import glob
 from selenium import webdriver
 from selenium.webdriver.common.keys import Keys
 from selenium.webdriver import DesiredCapabilities
@@ -17,7 +17,7 @@ url = r'https://care.srmist.edu.in/srmktroops'
 # chrome default dowload path. 
 download_path = '<chrome default download path>'
 
-num_que = int(input("Enter the number of question reports to download: ")) - 1 
+num_que = int(input("Enter the index number of question till which to check for reports: "))
 
 # The options.add_argument is the defualt user profile that 
 # could be found in a path similar to:
@@ -38,7 +38,6 @@ driver = webdriver.Chrome(executable_path = "<chromedriver path>", desired_capab
                           options = options)
 driver.implicitly_wait(5)
 driver.get(url)
-
 
 time.sleep(4)
 # Element to find email field.
@@ -64,33 +63,7 @@ time.sleep(2)
 first_que = driver.find_element_by_css_selector("#svgChart > g > g:nth-child(4) > path:nth-child(100)")
 first_que.click()
 
-# Clicking evaluate button for first question.
-evaluate = driver.find_element_by_css_selector('body > app-root > div > app-student-solve > div.container > app-solve-question > div > div > div.solution > mat-card > div.main-buttons > button.mat-raised-button.mat-accent > span')
-evaluate.click()
-time.sleep(4)
-
-result = driver.find_element_by_css_selector('body > app-root > div > app-student-solve > div.container > app-solve-question > div > div > div.solution > mat-card > div.result.ng-star-inserted > a:nth-child(1)')
-res_pass = result.get_attribute("style").split(" ")[-1]
-if res_pass == "green;":
-  # Download report button for first question.
-  report_down = driver.find_element_by_css_selector('body > app-root > div > app-student-solve > div.container > app-solve-question > div > div > div.solution > mat-card > div.result.ng-star-inserted > a.result.mat-elevation-z2.ng-star-inserted')
-  while True:
-    # Downloading Report for first question.
-    report_down.click()
-    time.sleep(0.5)
-    if path.isfile(path.join(download_path, "report.png")):
-      break
-
-# Clicking next on the first question page.
-time.sleep(8)
-next_but = driver.find_element_by_css_selector("body > app-root > div > app-student-solve > div.top > button:nth-child(3)")
-next_but.click()
-time.sleep(5)
-
-# variable to keep track of downloads, don't change.
-reports_downloaded = 1
-
-for _ in range(num_que):
+for num in range(num_que):
   # Clicking evaluate button.
   evaluate = driver.find_element_by_css_selector('body > app-root > div > app-student-solve > div.container > app-solve-question > div > div > div.solution > mat-card > div.main-buttons > button.mat-raised-button.mat-accent > span')
   evaluate.click()
@@ -105,8 +78,12 @@ for _ in range(num_que):
       # Downloading Report
       report_down.click()
       time.sleep(0.5)
-      if path.isfile(path.join(download_path, "report ({}).png".format(reports_downloaded))):
-        reports_downloaded += 1
+      report_list = glob(os.path.join(download_path,"*.png"))
+      if report_list:
+        new_folder_path = os.path.join(download_path, "folder_{}".format(num)) 
+        os.mkdir(new_folder_path)
+        for report in report_list:
+          shutil.move(report, new_folder_path)
         break
 
   # Clicking next. 

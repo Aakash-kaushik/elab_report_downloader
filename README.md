@@ -1,11 +1,11 @@
-# Working update shipping soon !!!
-
 # Elab Report Downloader
 
-Install requirements with 
+## requirements 
+- Install requirements with 
 ```python
 pip3 install -r requirements.txt
 ```
+- Requires that you don't have any `.png` file in download_path.
 
 ## Need to download 
 - [Chromedriver](https://chromedriver.chromium.org/downloads) accordng to chrome version. 
