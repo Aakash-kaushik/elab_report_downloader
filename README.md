@@ -14,3 +14,9 @@ pip3 install -r requirements.txt
 - download_path: default download path that chrome uses, not the one that you want.
 - deafult profile on line 27.
 - chromedriver path in webdriver.Chrome in arg executable_path.
+
+## Now run
+
+```python
+python3 oops_report.py
+```
