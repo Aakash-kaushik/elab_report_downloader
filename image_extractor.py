@@ -1,7 +1,8 @@
 import shutil, os
 from glob import glob
 
-folders_path = "/home/aakash/Downloads"
+# Same as chrome download path.
+folders_path = "<path>"
 
 folders_list = glob(os.path.join(folders_path, "*"))
 for num, folder in enumerate(folders_list):
