@@ -7,15 +7,15 @@ from selenium.webdriver import DesiredCapabilities
 from selenium.webdriver.chrome.options import Options
 
 # User id.
-email_value = r'RA1911031010035'
+email_value = r''
 
 # Password for the account.
-pwd_value = r'viraj2001'
+pwd_value = r''
 
 url = r'https://care.srmist.edu.in/srmktrada'
 
 # chrome default dowload path. 
-download_path = '/home/aakash/Downloads'
+download_path = ''
 
 num_que = int(input("Enter the index number of question till which to check for reports: "))
 
@@ -24,7 +24,7 @@ num_que = int(input("Enter the index number of question till which to check for 
 # Linux distros: /home/<username>/.config/google-chrome/Default
 # Windows: need to add
 options = Options()
-options.add_argument("/home/aakash/.config/google-chrome/Default")
+options.add_argument("")
 prefs = {"excludeSwitches" : "disable-popup-blocking"}
 options.add_experimental_option('prefs', prefs)
 options.add_argument("download.default_directory=./temp")
@@ -34,7 +34,7 @@ options.add_argument("--start-maximized")
 # Get chromedriver from https://chromedriver.chromium.org/
 # and add it as a PATH variable or specify the path in the
 # next line in the executable_path argument. 
-driver = webdriver.Chrome(executable_path = "./chromedriver", desired_capabilities = DesiredCapabilities.CHROME,
+driver = webdriver.Chrome(executable_path = "", desired_capabilities = DesiredCapabilities.CHROME,
                           options = options)
 driver.implicitly_wait(5)
 driver.get(url)
