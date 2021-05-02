@@ -2,7 +2,7 @@ import shutil, os
 from glob import glob
 
 # Same as chrome download path.
-folders_path = "<path>"
+folders_path = "<your download path>"
 
 folders_list = glob(os.path.join(folders_path, "*"))
 for num, folder in enumerate(folders_list):
