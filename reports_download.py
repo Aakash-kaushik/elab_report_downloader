@@ -12,7 +12,9 @@ email_value = r'<Your register number>'
 # Password for the account.
 pwd_value = r'<Password>'
 
-url = r'https://care.srmist.edu.in/srmktrada'
+# Link for the required lab 
+# For example, DAA: https://care.srmist.edu.in/srmktrada
+url = r'<eLab link as required>'
 
 # Add Chrome default download path (it's better to create a new folder for this). 
 # Windows: C:/Users/<username>/Downloads/<folder_name>
@@ -57,9 +59,9 @@ login_but = driver.find_element_by_css_selector('body > app-root > div > app-log
 login_but.click()
 time.sleep(10)
 
-# To click DAA banner.
-daa_banner = driver.find_element_by_css_selector("body > app-root > div > app-student-home > div > mat-card > div > div > app-student-home-card > mat-card")
-daa_banner.click()
+# To click language banner as per the eLab link.
+banner = driver.find_element_by_css_selector("body > app-root > div > app-student-home > div > mat-card > div > div > app-student-home-card > mat-card")
+banner.click()
 time.sleep(2)
 
 # Clicking on the first question.
