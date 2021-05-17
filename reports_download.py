@@ -109,7 +109,7 @@ for num in range(num_que):
         os.mkdir(new_folder_path)
         for report in report_list:
           shutil.move(report, new_folder_path)
-    break
+        break
   
   # Scroll to the top of the page. 
   driver.execute_script("window.scrollTo(document.body.scrollHeight, 0);")
