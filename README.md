@@ -1,6 +1,6 @@
-# Elab Report Downloader
+# eLab Report Downloader
 
-## requirements 
+## Requirements 
 - Install requirements with 
 ```python
 pip3 install -r requirements.txt
@@ -13,9 +13,10 @@ pip3 install -r requirements.txt
 ## Things to set before use
 - email_value - line 10.
 - pwd_value - line 13.
-- download_path: default download path that chrome uses, not the one that you want - line 18.
-- deafult profile - line 27.
-- chromedriver path in webdriver.Chrome in arg executable_path - line 37.
+- url (the link to the eLab that you want to download the report from) - line 17.
+- download_path (default download path that chrome uses, not the one that you want) - line 21.
+- default profile - line 30.
+- chromedriver path in webdriver.Chrome in arg executable_path - line 42.
 
 ## Now run
 
